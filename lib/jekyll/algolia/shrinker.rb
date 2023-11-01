@@ -60,6 +60,8 @@ module Jekyll
       # the source directory
       def self.stop_with_error(record)
         record_size = size(record)
+        print "DEBUG "
+        print record_size
         record_size_readable = Filesize.from("#{record_size}B").to_s('Kb')
         max_record_size = Configurator.algolia('max_record_size')
         max_record_size_readable = Filesize
